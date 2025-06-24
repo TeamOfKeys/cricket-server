@@ -59,7 +59,11 @@ async function startServer() {
     const server = http.createServer(app);
 
     // Basic middleware
-    app.use(cors());
+    app.use(cors({
+      origin: '*', // Allow all origins (for testing only)
+      methods: ['GET', 'POST', 'PUT', 'DELETE'],
+      allowedHeaders: ['Content-Type', 'Authorization']
+    }));
     app.use(express.json());
     app.use(express.static(path.join(__dirname, 'public')));
 
@@ -95,8 +99,8 @@ async function startServer() {
       logger.error('Unhandled error:', err);
       res.status(500).json({
         status: 'error',
-        message: process.env.NODE_ENV === 'production' 
-          ? 'Internal server error' 
+        message: process.env.NODE_ENV === 'production'
+          ? 'Internal server error'
           : err.message
       });
     });
@@ -141,11 +145,11 @@ function startMemoryManagement() {
   setInterval(() => {
     const memoryUsage = process.memoryUsage();
     performanceMetrics.recordMemoryUsage(memoryUsage);
-    
+
     if (memoryUsage.heapUsed > 1024 * 1024 * 768) { // 768 MB
       logger.warn('High memory usage detected, cleaning up resources');
       gameService.cleanupStaleData();
-      
+
       if (global.gc) {
         global.gc();
         performanceMetrics.recordGarbageCollection();
