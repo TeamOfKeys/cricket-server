@@ -18,7 +18,7 @@ class MongoManager {
 
     try {
       await mongoose.connect(
-        process.env.MONGODB_URI || "mongodb+srv://abhilashbadgujarofficial020: abhilashbadgujarofficial020@cricketcrash.mqoeezf.mongodb.net/?retryWrites=true&w=majority&appName=cricketcrash",
+        process.env.MONGODB_URI || "mongodb+srv://abhilashbadgujarofficial020:Arihi@123@cricketcrash.mqoeezf.mongodb.net/?retryWrites=true&w=majority&appName=cricketcrash",
         this.mongoOptions
       );
       
