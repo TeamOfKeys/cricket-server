@@ -1,0 +1,162 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - name: "Warm up"
+      duration: 30
+      arrivalRate: 1
+      rampTo: 2
+    - name: "Ramp up load"
+      duration: 60
+      arrivalRate: 2
+      rampTo: 5
+    - name: "Sustained load"
+      duration: 120
+      arrivalRate: 5
+    - name: "Peak load"
+      duration: 30
+      arrivalRate: 10
+
+  plugins:
+    metrics-by-endpoint: {}
+    expect: {}
+
+  defaults:
+    headers:
+      Content-Type: "application/json"
+    timeout: 10000
+
+  variables:
+    betAmounts:
+      - 10
+      - 20
+      - 50
+      - 100
+    autoCashouts:
+      - 1.5
+      - 2.0
+      - 3.0
+      - 5.0
+
+  processor: "./processor.js"
+
+scenarios:
+  - name: "Health check flow"
+    weight: 2
+    flow:
+      - get:
+          url: "/health"
+          expect:
+            - statusCode: 200
+      - think: 1
+      - get:
+          url: "/health/readiness"
+          expect:
+            - statusCode: 200
+      - think: 1
+      - get:
+          url: "/health/liveness"
+          expect:
+            - statusCode: 200
+
+  - name: "Game observation flow"
+    weight: 5
+    flow:
+      - function: "generateUsername"
+      - post:
+          url: "/api/register"
+          json:
+            username: "{{ username }}"
+            password: "Password123!"
+          capture:
+            - json: "$.userId"
+              as: "userId"
+          expect:
+            - statusCode: 201
+      - think: 1
+      - post:
+          url: "/api/login"
+          json:
+            username: "{{ username }}"
+            password: "Password123!"
+          capture:
+            - json: "$.token"
+              as: "authToken"
+          expect:
+            - statusCode: 200
+      - think: 1
+      - get:
+          url: "/api/game/history"
+          headers:
+            Authorization: "Bearer {{ authToken }}"
+          expect:
+            - statusCode: 200
+      - think: 2
+      - ws:
+          connect: "ws://localhost:3000"
+          send: []
+          think: 5
+
+  - name: "Full game flow"
+    weight: 3
+    flow:
+      - function: "generateUsername"
+      - post:
+          url: "/api/register"
+          json:
+            username: "{{ username }}"
+            password: "Password123!"
+          capture:
+            - json: "$.userId"
+              as: "userId"
+          expect:
+            - statusCode: 201
+      - think: 1
+      - post:
+          url: "/api/login"
+          json:
+            username: "{{ username }}"
+            password: "Password123!"
+          capture:
+            - json: "$.token"
+              as: "authToken"
+          expect:
+            - statusCode: 200
+      - think: 1
+      - function: "generateBet"
+      - ws:
+          connect: "ws://localhost:3000"
+          send:
+            - type: "PLACE_BET"
+              userId: "{{ userId }}"
+              amount: "{{ betAmount }}"
+              autoCashoutAt: "{{ autoCashout }}"
+          think: 3
+      - get:
+          url: "/api/transactions/{{ userId }}"
+          headers:
+            Authorization: "Bearer {{ authToken }}"
+          expect:
+            - statusCode: 200
+
+  - name: "WebSocket stress test"
+    weight: 4
+    flow:
+      - function: "generateUsername"
+      - post:
+          url: "/api/register"
+          json:
+            username: "{{ username }}"
+            password: "Password123!"
+          capture:
+            - json: "$.userId"
+              as: "userId"
+      - ws:
+          connect: "ws://localhost:3000"
+          send:
+            - function: "generateBet"
+            - type: "PLACE_BET"
+              userId: "{{ userId }}"
+              amount: "{{ betAmount }}"
+              autoCashoutAt: "{{ autoCashout }}"
+          think: 2
+      - think: 3

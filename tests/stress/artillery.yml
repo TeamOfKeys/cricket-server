@@ -1,0 +1,142 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 30
+      arrivalRate: 2
+      rampTo: 10
+      name: "Warm up"
+    - duration: 60
+      arrivalRate: 10
+      name: "Sustained load"
+    - duration: 30
+      arrivalRate: 20
+      name: "Peak load"
+  
+  ws:
+    rejectUnauthorized: false
+    subprotocols: ["cricket-crash-v1"]
+
+  variables:
+    username: 
+      - "stresstest_{{ $randomString() }}"
+    password:
+      - "StressTest123!"
+    betAmount:
+      - 10
+      - 20
+      - 50
+      - 100
+    autoCashout:
+      - 1.5
+      - 2.0
+      - 3.0
+      - 5.0
+
+  defaults:
+    headers:
+      Content-Type: "application/json"
+      User-Agent: "Artillery Stress Test"
+
+  plugins:
+    expect: {}
+    metrics-by-endpoint: {}
+
+scenarios:
+  - name: "User registration and betting flow"
+    weight: 7
+    flow:
+      - post:
+          url: "/api/register"
+          json:
+            username: "{{ username }}"
+            password: "{{ password }}"
+          capture:
+            - json: "$.userId"
+              as: "userId"
+          expect:
+            - statusCode: 201
+          beforeRequest: "setRandomUsername"
+
+      - think: 1
+
+      - post:
+          url: "/api/login"
+          json:
+            username: "{{ username }}"
+            password: "{{ password }}"
+          capture:
+            - json: "$.user.id"
+              as: "userId"
+            - json: "$.token"
+              as: "authToken"
+          expect:
+            - statusCode: 200
+
+      - think: 1
+
+      - get:
+          url: "/api/user/{{ userId }}"
+          headers:
+            Authorization: "Bearer {{ authToken }}"
+          expect:
+            - statusCode: 200
+
+      - think: 1
+
+      - ws:
+          connect: "ws://localhost:3000"
+          send:
+            - type: "PLACE_BET"
+              userId: "{{ userId }}"
+              amount: "{{ betAmount }}"
+              autoCashoutAt: "{{ autoCashout }}"
+          expect:
+            - type: "BET_RESPONSE"
+              status: "success"
+
+      - think: 5
+
+      - get:
+          url: "/api/transactions/{{ userId }}"
+          headers:
+            Authorization: "Bearer {{ authToken }}"
+          expect:
+            - statusCode: 200
+
+  - name: "WebSocket game observer"
+    weight: 3
+    flow:
+      - ws:
+          connect: "ws://localhost:3000"
+          send: []
+          think: 10
+
+  - name: "Game history viewer"
+    weight: 2
+    flow:
+      - get:
+          url: "/api/game/history"
+          expect:
+            - statusCode: 200
+      - think: 1
+      - get:
+          url: "/api/game/verify/{{ $randomString() }}"
+          expect:
+            - statusCode: [200, 404]
+
+before:
+  flow:
+    - function: "setRandomUsername"
+    - log: "Test started"
+
+after:
+  flow:
+    - log: "Test completed"
+
+functions:
+  setRandomUsername:
+    function: |
+      module.exports = function(context, events, done) {
+        context.vars.username = 'stresstest_' + Math.random().toString(36).substring(7);
+        return done();
+      };

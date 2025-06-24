@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cricket Crash – Minimal Front-end</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; }
+    h2   { margin-top: 2.5rem; }
+    input, button { padding: .4rem .6rem; margin: .2rem 0; }
+    #multiplier { font-size: 3rem; font-weight: 700; margin: 1rem 0; }
+    #game, #login, #register { display: none; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+<h1>🏏 Cricket Crash – Dev UI</h1>
+
+<!-- REGISTER ----------------------------------------------------------- -->
+<section id="register">
+  <h2>Register</h2>
+  <form id="registerForm">
+    <input id="regUsername"   placeholder="username" required>
+    <input id="regPassword"   type="password" placeholder="password" required>
+    <button type="submit">Create account</button>
+  </form>
+  <p id="regMsg"></p>
+</section>
+
+<!-- LOGIN -------------------------------------------------------------- -->
+<section id="login">
+  <h2>Login</h2>
+  <form id="loginForm">
+    <input id="logUsername" placeholder="username" required>
+    <input id="logPassword" type="password" placeholder="password" required>
+    <button type="submit">Sign in</button>
+  </form>
+  <p id="logMsg"></p>
+</section>
+
+<!-- GAME --------------------------------------------------------------- -->
+<section id="game">
+  <h2>Game</h2>
+  <div>Round ID: <span id="roundId">—</span></div>
+  <div>Status: <span id="phase">—</span></div>
+
+  <div id="multiplier">1.00×</div>
+
+  <form id="betForm">
+    <input id="betAmount" type="number" placeholder="Bet amount" min="1" required>
+    <input id="autoCash"  type="number" step="0.01" placeholder="Auto-cash @ x (opt.)">
+    <button type="submit">Place Bet</button>
+  </form>
+
+  <button id="cashoutBtn" disabled>Cash out</button>
+
+  <h3>Balance: $<span id="balance">0.00</span></h3>
+
+  <h3>Last 10 crash points</h3>
+  <ul id="history"></ul>
+
+  <p id="betMsg"></p>
+</section>
+
+<script>
+const API   = '/api';              // change to '' if you mounted routes at /api/auth etc.
+const WSURL = location.origin.replace(/^http/, 'ws');
+
+let token  = localStorage.getItem('token') || null;
+let userId = null;
+let socket = null;
+
+/* ---------- Registration ---------- */
+document.getElementById('register').style.display = 'block';
+document.getElementById('registerForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const body = {
+    username: regUsername.value.trim(),
+    password: regPassword.value
+  };
+  const res  = await fetch(`${API}/auth/register`, {
+    method: 'POST', headers: { 'Content-Type':'application/json' },
+    body: JSON.stringify(body)
+  });
+  regMsg.textContent = res.ok
+    ? '✅  Account created – please log in'
+    : '❌  ' + (await res.json()).error;
+
+  if (res.ok) {
+    document.getElementById('login').style.display    = 'block';
+    document.getElementById('register').style.display = 'none';
+  }
+});
+
+/* ---------- Login ---------- */
+document.getElementById('loginForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const res = await fetch(`${API}/auth/login`, {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({
+      username: logUsername.value.trim(),
+      password: logPassword.value
+    })
+  });
+  const data = await res.json();
+  if (!res.ok) { logMsg.textContent = '❌ ' + data.error; return; }
+
+  token      = data.token;
+  userId     = data.user.id;
+  localStorage.setItem('token', token);
+  balance.textContent = data.user.balance.toFixed(2);
+
+  document.getElementById('login').style.display = 'none';
+  document.getElementById('game').style.display  = 'block';
+  connectSocket();
+});
+
+/* ---------- WebSocket live feed ---------- */
+function connectSocket() {
+  socket = new WebSocket(WSURL);
+
+  socket.addEventListener('message', ev => {
+    const msg = JSON.parse(ev.data);
+    if (msg.type !== 'gameState') return;
+
+    roundId.textContent = msg.roundId;
+    phase.textContent   = msg.phase;
+    multiplier.textContent = msg.multiplier.toFixed(2) + '×';
+
+    // enable cash-out while RUNNING
+    cashoutBtn.disabled = msg.phase !== 'RUNNING';
+
+    // recent crash list
+    history.innerHTML = msg.lastCrashPoints
+      .slice(0, 10)
+      .map(x => `<li>${x.toFixed(2)}×</li>`)
+      .join('');
+  });
+
+  socket.addEventListener('close', () => setTimeout(connectSocket, 2000));
+}
+
+/* ---------- Place bet ---------- */
+betForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  const body = {
+    amount: parseFloat(betAmount.value),
+    autoCashoutAt: autoCash.value ? parseFloat(autoCash.value) : null
+  };
+  const res  = await fetch(`${API}/game/bet`, {
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify(body)
+  });
+  const data = await res.json();
+  betMsg.textContent = res.ok
+    ? `✅ Bet accepted for round ${data.roundId}`
+    : '❌ ' + data.error;
+
+  if (res.ok) balance.textContent = data.balance.toFixed(2);
+});
+
+/* ---------- Cash-out ---------- */
+cashoutBtn.addEventListener('click', async () => {
+  const res  = await fetch(`${API}/game/cashout`, {
+    method:'POST',
+    headers:{ 'Authorization':`Bearer ${token}` }
+  });
+  const data = await res.json();
+  betMsg.textContent = res.ok
+    ? `🎉  Cashed out at ${data.multiplier.toFixed(2)}× → +$${data.winnings.toFixed(2)}`
+    : '❌ ' + data.error;
+
+  if (res.ok) balance.textContent = data.balance.toFixed(2);
+  cashoutBtn.disabled = true;
+});
+</script>
+</body>
+</html>

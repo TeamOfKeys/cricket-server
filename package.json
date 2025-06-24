@@ -1,0 +1,100 @@
+{
+  "name": "cricket-crash-game",
+  "version": "1.0.0",
+  "description": "A real-time multiplayer cricket crash game server",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test:stress:quick": "artillery quick --count 10 -n 20 http://localhost:3000/health/liveness -o ./reports/quick-test.json",
+    "test:stress:full": "artillery run ./tests/stress/artillery-full.yml -o ./reports/full-test.json",
+    "test:stress:ws": "node ./tests/stress/websocket-test.js --connections 1000 --duration 60",
+    "test:stress:all": "npm run test:stress:quick && npm run test:stress:full && npm run test:stress:ws",
+    "test:stress:report": "node ./tests/stress/generate-report.js"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "ioredis": "^5.3.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.3",
+    "swagger-ui-express": "^5.0.0",
+    "winston": "^3.11.0",
+    "ws": "^8.15.1"
+  },
+  "devDependencies": {
+    "artillery": "^2.0.21",
+    "autocannon": "^7.12.0",
+    "cli-table3": "^0.6.5",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.2",
+    "jest": "^29.7.0",
+    "mkdirp": "^3.0.1",
+    "nodemon": "^3.0.2",
+    "prettier": "^3.1.1",
+    "rimraf": "^6.0.1"
+  },
+  "keywords": [
+    "cricket",
+    "crash-game",
+    "multiplayer",
+    "websocket",
+    "gambling",
+    "game-server"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "./coverage",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/docs/**",
+      "!src/public/**"
+    ]
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "js,json",
+    "ignore": [
+      "src/public/",
+      "src/docs/",
+      "*.test.js"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es2021": true,
+      "jest": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 12
+    },
+    "rules": {
+      "no-console": "warn",
+      "prettier/prettier": "error"
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "printWidth": 80,
+    "tabWidth": 2,
+    "semi": true
+  }
+}

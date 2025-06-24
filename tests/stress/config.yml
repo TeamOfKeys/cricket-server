@@ -1,0 +1,34 @@
+// tests/stress/config.yml
+config:
+  target: "http://localhost:3000"
+  phases:
+    - name: "Health check warm-up"
+      duration: 10
+      arrivalRate: 1
+      rampTo: 5
+    - name: "Health check load"
+      duration: 20
+      arrivalRate: 5
+
+  variables:
+    endpoints:
+      - "/health"
+      - "/health/readiness"
+      - "/health/liveness"
+
+scenarios:
+  - name: "Health check endpoints"
+    flow:
+      - get:
+          url: "{{ $loopElement endpoints }}"
+          expect:
+            - statusCode: 200
+            - contentType: "application/json"
+            - hasProperty: "status"
+            - equals:
+                - "{{ status }}"
+                - "ok"
+      
+      - think: 1
+
+      - log: "Response time: {{ response.timings.phases.firstByte }} ms"
