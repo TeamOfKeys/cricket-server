@@ -14895,3 +14895,17 @@
 {"level":"info","message":"Game results saved for round 1750771305777","service":"cricket-crash","timestamp":"2025-06-24T13:21:57.067Z"}
 {"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-06-24T13:21:57.067Z"}
 {"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-06-24T13:22:02.083Z"}
+{"level":"info","message":"Initializing seed chain...","service":"cricket-crash","timestamp":"2025-06-24T14:00:18.801Z"}
+{"level":"info","message":"Successfully created indexes for users","service":"cricket-crash","timestamp":"2025-06-24T14:05:09.878Z"}
+{"level":"info","message":"Successfully created indexes for games","service":"cricket-crash","timestamp":"2025-06-24T14:05:10.117Z"}
+{"level":"info","message":"Successfully created indexes for bets","service":"cricket-crash","timestamp":"2025-06-24T14:05:10.225Z"}
+{"level":"info","message":"Successfully created indexes for transactions","service":"cricket-crash","timestamp":"2025-06-24T14:05:10.278Z"}
+{"level":"info","message":"MongoDB indexes setup completed","service":"cricket-crash","timestamp":"2025-06-24T14:05:10.278Z"}
+{"level":"info","message":"Initializing seed chain...","service":"cricket-crash","timestamp":"2025-06-24T14:05:10.280Z"}
+{"level":"info","message":"New seed chain initialized","service":"cricket-crash","timestamp":"2025-06-24T14:05:10.348Z"}
+{"level":"info","message":"Cricket Crash Game server running on http://localhost:3000","service":"cricket-crash","timestamp":"2025-06-24T14:05:10.379Z"}
+{"level":"info","message":"Worker 20892 is ready to handle connections","service":"cricket-crash","timestamp":"2025-06-24T14:05:10.379Z"}
+{"level":"info","message":"Game running with crash point: 1.49","service":"cricket-crash","timestamp":"2025-06-24T14:05:20.409Z"}
+{"level":"info","message":"Game results saved for round 1750773910312","service":"cricket-crash","timestamp":"2025-06-24T14:05:21.902Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-06-24T14:05:21.903Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-06-24T14:05:26.905Z"}
