@@ -16,7 +16,7 @@ class GameService {
       serverSeedHash: null,
       nextServerSeedHash: null,
       players: new Map(),
-      nextGameCountdown: 10,
+      nextGameCountdown: 6,
       lastCrashPoints: []
     };
 
@@ -111,7 +111,7 @@ class GameService {
   _scheduleNextRound() {
     const bettingDuration = process.env.BETTING_PHASE_DURATION
       ? parseInt(process.env.BETTING_PHASE_DURATION)
-      : 10000;
+      : 6000;
 
     this.nextRoundTimeout = setTimeout(this.startGameRound, bettingDuration);
   }
@@ -287,7 +287,7 @@ class GameService {
     this.gameState.multiplier = 1.00;
     this.gameState.players.clear();
     this.gameState.crashPoint = null;
-    this.gameState.nextGameCountdown = 10;
+    this.gameState.nextGameCountdown = 6;
     
     this.isGameRunning = false;
   }
