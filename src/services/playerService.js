@@ -48,8 +48,12 @@ class PlayerService {
     }
 
     async _processBet(userId, amount, autoCashoutAt, username) {
-        const user = await cacheService.getCachedUser(userId);
+        const user = await User.findById(userId);
         if (!user) return { success: false, message: 'User not found' };
+
+        // console.log('🔍 User found:', user.username);
+        //     console.log('🔍 Current balance:', user.balance);
+        //     console.log('🔍 Bet amount:', amount);
         if (user.balance < amount) return { success: false, message: 'Insufficient balance' };
 
         const updatedUser = await User.findOneAndUpdate(

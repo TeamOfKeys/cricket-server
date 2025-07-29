@@ -7,6 +7,7 @@ const cacheService = require('../../services/cacheService');
 router.get('/profile', auth.authenticate, async (req, res, next) => {
   try {
     const user = await cacheService.getCachedUser(req.user._id);
+    
     res.json({
       id: user._id,
       username: user.username,
