@@ -14,6 +14,8 @@ router.post('/register', authLimiter, async (req, res, next) => {
   try {
     const { username, password } = req.body;
 
+
+    console.log('Registering user:', username);
     if (!username || !password) {
       return res.status(400).json({ error: 'Username and password are required' });
     }

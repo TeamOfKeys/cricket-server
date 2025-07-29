@@ -3,6 +3,7 @@ const { User, Bet, Transaction } = require('../models');
 const cacheService = require('./cacheService');
 const broadcastService = require('./broadcastService');
 
+
 class PlayerService {
     constructor() {
         this.gameState = null;
@@ -10,6 +11,72 @@ class PlayerService {
 
     setGameState(gameState) {
         this.gameState = gameState;
+    }
+
+    // ADD THIS METHOD for handling deposits
+    async handleDeposit(userId, amount) {
+        try {
+            console.log(`💰 Processing deposit for user ${userId}, amount: ${amount}`);
+            
+            // Validate parameters
+            if (!userId || !amount || amount <= 0) {
+                return { success: false, message: 'Invalid deposit parameters' };
+            }
+
+            // Find the user
+            const user = await User.findById(userId);
+            if (!user) {
+                return { success: false, message: 'User not found' };
+            }
+
+            console.log(`👤 User found: ${user.username}, current balance: ${user.balance}`);
+
+            // Calculate new balance
+            const currentBalance = user.balance || 0;
+            const newBalance = currentBalance + parseFloat(amount);
+
+            // Update user balance
+            const updatedUser = await User.findByIdAndUpdate(
+                userId,
+                { balance: newBalance },
+                { new: true }
+            );
+
+            if (!updatedUser) {
+                return { success: false, message: 'Failed to update user balance' };
+            }
+
+            // Create transaction record
+            await Transaction.create({
+                userId: userId,
+                type: 'deposit',
+                amount: parseFloat(amount),
+                gameId: null, // No game associated with deposits
+                createdAt: new Date()
+            });
+
+            console.log(`✅ Deposit successful: ${user.username} balance updated from ${currentBalance} to ${newBalance}`);
+
+            // Invalidate user cache if available
+            if (cacheService.invalidateUserCache) {
+                await cacheService.invalidateUserCache(userId);
+            }
+
+            return {
+                success: true,
+                message: `Successfully deposited $${amount}`,
+                balance: newBalance,
+                user: {
+                    id: updatedUser._id,
+                    username: updatedUser.username,
+                    balance: newBalance
+                }
+            };
+
+        } catch (error) {
+            console.error('❌ Deposit error:', error);
+            return { success: false, message: 'Server error processing deposit' };
+        }
     }
 
     async handlePlaceBet(userId, amount, autoCashoutAt, username) {

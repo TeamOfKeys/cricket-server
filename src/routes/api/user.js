@@ -3,6 +3,7 @@ const router = express.Router();
 const auth = require('../../middleware/auth');
 const { Transaction } = require('../../models');
 const cacheService = require('../../services/cacheService');
+const playerService = require('../../services/playerService');
 
 router.get('/profile', auth.authenticate, async (req, res, next) => {
   try {
