@@ -21361,3 +21361,216 @@
 {"level":"info","message":"Game results saved for round 1753784290242","service":"cricket-crash","timestamp":"2025-07-29T10:18:21.479Z"}
 {"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:18:21.479Z"}
 {"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:18:26.480Z"}
+{"level":"info","message":"Successfully created indexes for users","service":"cricket-crash","timestamp":"2025-07-29T10:19:12.802Z"}
+{"level":"info","message":"Successfully created indexes for games","service":"cricket-crash","timestamp":"2025-07-29T10:19:12.981Z"}
+{"level":"info","message":"Successfully created indexes for bets","service":"cricket-crash","timestamp":"2025-07-29T10:19:13.080Z"}
+{"level":"info","message":"Successfully created indexes for transactions","service":"cricket-crash","timestamp":"2025-07-29T10:19:13.125Z"}
+{"level":"info","message":"MongoDB indexes setup completed","service":"cricket-crash","timestamp":"2025-07-29T10:19:13.125Z"}
+{"level":"info","message":"Initializing seed chain...","service":"cricket-crash","timestamp":"2025-07-29T10:19:13.127Z"}
+{"level":"info","message":"Continuing chain from round 1753784348192","service":"cricket-crash","timestamp":"2025-07-29T10:19:13.161Z"}
+{"level":"info","message":"Cricket Crash Game server running on http://localhost:3000","service":"cricket-crash","timestamp":"2025-07-29T10:19:13.194Z"}
+{"level":"info","message":"Worker 37732 is ready to handle connections","service":"cricket-crash","timestamp":"2025-07-29T10:19:13.194Z"}
+{"level":"info","message":"Client connected. Total connections: 1","service":"cricket-crash","timestamp":"2025-07-29T10:19:13.260Z"}
+{"level":"info","message":"Client connected. Total connections: 2","service":"cricket-crash","timestamp":"2025-07-29T10:19:13.275Z"}
+{"level":"info","message":"Client connected. Total connections: 3","service":"cricket-crash","timestamp":"2025-07-29T10:19:14.169Z"}
+{"level":"info","message":"Game running with crash point: 1.21","service":"cricket-crash","timestamp":"2025-07-29T10:19:19.228Z"}
+{"level":"info","message":"Game results saved for round 1753784348192","service":"cricket-crash","timestamp":"2025-07-29T10:19:19.985Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:19:19.985Z"}
+{"level":"info","message":"Client disconnected. Total connections: 2","service":"cricket-crash","timestamp":"2025-07-29T10:19:23.174Z"}
+{"level":"info","message":"Client connected. Total connections: 3","service":"cricket-crash","timestamp":"2025-07-29T10:19:23.175Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:19:24.997Z"}
+{"level":"info","message":"Client disconnected. Total connections: 2","service":"cricket-crash","timestamp":"2025-07-29T10:19:25.170Z"}
+{"level":"info","message":"Client connected. Total connections: 3","service":"cricket-crash","timestamp":"2025-07-29T10:19:25.171Z"}
+{"level":"info","message":"Client connected. Total connections: 4","service":"cricket-crash","timestamp":"2025-07-29T10:19:26.180Z"}
+{"level":"info","message":"Client connected. Total connections: 5","service":"cricket-crash","timestamp":"2025-07-29T10:19:27.176Z"}
+{"level":"info","message":"Client disconnected. Total connections: 4","service":"cricket-crash","timestamp":"2025-07-29T10:19:29.171Z"}
+{"level":"info","message":"Game running with crash point: 1.48","service":"cricket-crash","timestamp":"2025-07-29T10:19:31.107Z"}
+{"level":"info","message":"Client connected. Total connections: 5","service":"cricket-crash","timestamp":"2025-07-29T10:19:32.179Z"}
+{"level":"info","message":"Game results saved for round 1753784364998","service":"cricket-crash","timestamp":"2025-07-29T10:19:32.560Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:19:32.560Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:19:37.574Z"}
+{"level":"info","message":"Game running with crash point: 1.5","service":"cricket-crash","timestamp":"2025-07-29T10:19:43.686Z"}
+{"level":"info","message":"Game results saved for round 1753784377574","service":"cricket-crash","timestamp":"2025-07-29T10:19:45.204Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:19:45.204Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:19:50.216Z"}
+{"level":"info","message":"Game running with crash point: 2.58","service":"cricket-crash","timestamp":"2025-07-29T10:19:56.341Z"}
+{"level":"info","message":"Game results saved for round 1753784390216","service":"cricket-crash","timestamp":"2025-07-29T10:19:59.634Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:19:59.634Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:20:04.636Z"}
+{"level":"info","message":"Game running with crash point: 1.4","service":"cricket-crash","timestamp":"2025-07-29T10:20:10.759Z"}
+{"level":"info","message":"Game results saved for round 1753784404636","service":"cricket-crash","timestamp":"2025-07-29T10:20:12.077Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:20:12.078Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:20:17.090Z"}
+{"level":"info","message":"Game running with crash point: 1.95","service":"cricket-crash","timestamp":"2025-07-29T10:20:23.194Z"}
+{"level":"info","message":"Game results saved for round 1753784417091","service":"cricket-crash","timestamp":"2025-07-29T10:20:25.588Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:20:25.588Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:20:30.591Z"}
+{"level":"info","message":"Game running with crash point: 1.53","service":"cricket-crash","timestamp":"2025-07-29T10:20:36.696Z"}
+{"level":"info","message":"Game results saved for round 1753784430592","service":"cricket-crash","timestamp":"2025-07-29T10:20:38.211Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:20:38.211Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:20:43.212Z"}
+{"level":"info","message":"Game running with crash point: 2.64","service":"cricket-crash","timestamp":"2025-07-29T10:20:49.331Z"}
+{"level":"info","message":"Game results saved for round 1753784443213","service":"cricket-crash","timestamp":"2025-07-29T10:20:52.677Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:20:52.677Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:20:57.680Z"}
+{"level":"info","message":"Game running with crash point: 1.27","service":"cricket-crash","timestamp":"2025-07-29T10:21:03.790Z"}
+{"level":"info","message":"Game results saved for round 1753784457681","service":"cricket-crash","timestamp":"2025-07-29T10:21:04.738Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:21:04.738Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:21:09.744Z"}
+{"level":"info","message":"Game running with crash point: 4.17","service":"cricket-crash","timestamp":"2025-07-29T10:21:15.856Z"}
+{"level":"info","message":"Game results saved for round 1753784469744","service":"cricket-crash","timestamp":"2025-07-29T10:21:20.841Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:21:20.841Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:21:25.850Z"}
+{"level":"info","message":"Game running with crash point: 5.41","service":"cricket-crash","timestamp":"2025-07-29T10:21:31.978Z"}
+{"level":"info","message":"Game results saved for round 1753784485851","service":"cricket-crash","timestamp":"2025-07-29T10:21:37.834Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:21:37.834Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:21:42.839Z"}
+{"level":"info","message":"Game running with crash point: 1.53","service":"cricket-crash","timestamp":"2025-07-29T10:21:48.965Z"}
+{"level":"info","message":"Game results saved for round 1753784502840","service":"cricket-crash","timestamp":"2025-07-29T10:21:50.535Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:21:50.535Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:21:55.536Z"}
+{"level":"info","message":"Game running with crash point: 0.99","service":"cricket-crash","timestamp":"2025-07-29T10:22:01.656Z"}
+{"level":"info","message":"Game results saved for round 1753784515537","service":"cricket-crash","timestamp":"2025-07-29T10:22:01.784Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:22:01.784Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:22:06.797Z"}
+{"level":"info","message":"Game running with crash point: 1.41","service":"cricket-crash","timestamp":"2025-07-29T10:22:12.917Z"}
+{"level":"info","message":"Game results saved for round 1753784526797","service":"cricket-crash","timestamp":"2025-07-29T10:22:14.195Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:22:14.195Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:22:19.196Z"}
+{"level":"info","message":"Game running with crash point: 1.73","service":"cricket-crash","timestamp":"2025-07-29T10:22:25.299Z"}
+{"level":"info","message":"Game results saved for round 1753784539196","service":"cricket-crash","timestamp":"2025-07-29T10:22:27.260Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:22:27.260Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:22:32.264Z"}
+{"level":"info","message":"Game running with crash point: 10.73","service":"cricket-crash","timestamp":"2025-07-29T10:22:38.376Z"}
+{"level":"info","message":"Game results saved for round 1753784552265","service":"cricket-crash","timestamp":"2025-07-29T10:22:46.495Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:22:46.495Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:22:51.500Z"}
+{"level":"info","message":"Game running with crash point: 2.03","service":"cricket-crash","timestamp":"2025-07-29T10:22:57.606Z"}
+{"level":"info","message":"Game results saved for round 1753784571500","service":"cricket-crash","timestamp":"2025-07-29T10:23:00.125Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:23:00.126Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:23:05.130Z"}
+{"level":"info","message":"Game running with crash point: 4.09","service":"cricket-crash","timestamp":"2025-07-29T10:23:11.233Z"}
+{"level":"info","message":"Game results saved for round 1753784585131","service":"cricket-crash","timestamp":"2025-07-29T10:23:16.161Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:23:16.161Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:23:21.175Z"}
+{"level":"info","message":"Game running with crash point: 3.49","service":"cricket-crash","timestamp":"2025-07-29T10:23:27.306Z"}
+{"level":"info","message":"Game results saved for round 1753784601176","service":"cricket-crash","timestamp":"2025-07-29T10:23:31.708Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:23:31.708Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:23:36.721Z"}
+{"level":"info","message":"Game running with crash point: 1.86","service":"cricket-crash","timestamp":"2025-07-29T10:23:42.830Z"}
+{"level":"info","message":"Game results saved for round 1753784616721","service":"cricket-crash","timestamp":"2025-07-29T10:23:45.074Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:23:45.074Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:23:50.076Z"}
+{"level":"info","message":"Game running with crash point: 3.52","service":"cricket-crash","timestamp":"2025-07-29T10:23:56.210Z"}
+{"level":"info","message":"Game results saved for round 1753784630077","service":"cricket-crash","timestamp":"2025-07-29T10:24:00.572Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:24:00.572Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:24:05.572Z"}
+{"level":"info","message":"Game running with crash point: 11.14","service":"cricket-crash","timestamp":"2025-07-29T10:24:11.689Z"}
+{"level":"info","message":"Game results saved for round 1753784645573","service":"cricket-crash","timestamp":"2025-07-29T10:24:19.986Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:24:19.986Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:24:24.987Z"}
+{"level":"info","message":"Game running with crash point: 1.05","service":"cricket-crash","timestamp":"2025-07-29T10:24:31.099Z"}
+{"level":"info","message":"Game results saved for round 1753784664987","service":"cricket-crash","timestamp":"2025-07-29T10:24:31.355Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:24:31.355Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:24:36.363Z"}
+{"level":"info","message":"Game running with crash point: 3.16","service":"cricket-crash","timestamp":"2025-07-29T10:24:42.495Z"}
+{"level":"info","message":"Game results saved for round 1753784676364","service":"cricket-crash","timestamp":"2025-07-29T10:24:46.541Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:24:46.542Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:24:51.546Z"}
+{"level":"info","message":"Game running with crash point: 1.26","service":"cricket-crash","timestamp":"2025-07-29T10:24:57.660Z"}
+{"level":"info","message":"Game results saved for round 1753784691547","service":"cricket-crash","timestamp":"2025-07-29T10:24:58.547Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:24:58.548Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:25:03.549Z"}
+{"level":"info","message":"Game running with crash point: 1.71","service":"cricket-crash","timestamp":"2025-07-29T10:25:09.667Z"}
+{"level":"info","message":"Game results saved for round 1753784703549","service":"cricket-crash","timestamp":"2025-07-29T10:25:11.565Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:25:11.565Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:25:16.572Z"}
+{"level":"info","message":"Game running with crash point: 1.33","service":"cricket-crash","timestamp":"2025-07-29T10:25:22.710Z"}
+{"level":"info","message":"Game results saved for round 1753784716573","service":"cricket-crash","timestamp":"2025-07-29T10:25:23.829Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:25:23.829Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:25:28.843Z"}
+{"level":"info","message":"Game running with crash point: 4.21","service":"cricket-crash","timestamp":"2025-07-29T10:25:34.950Z"}
+{"level":"info","message":"Game results saved for round 1753784728843","service":"cricket-crash","timestamp":"2025-07-29T10:25:39.963Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:25:39.963Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:25:44.972Z"}
+{"level":"info","message":"Game running with crash point: 2.66","service":"cricket-crash","timestamp":"2025-07-29T10:25:51.099Z"}
+{"level":"info","message":"Game results saved for round 1753784744973","service":"cricket-crash","timestamp":"2025-07-29T10:25:54.541Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:25:54.541Z"}
+{"level":"info","message":"Client disconnected. Total connections: 4","service":"cricket-crash","timestamp":"2025-07-29T10:25:58.263Z"}
+{"level":"info","message":"Client disconnected. Total connections: 3","service":"cricket-crash","timestamp":"2025-07-29T10:25:58.264Z"}
+{"level":"info","message":"Client disconnected. Total connections: 2","service":"cricket-crash","timestamp":"2025-07-29T10:25:58.264Z"}
+{"level":"info","message":"Client disconnected. Total connections: 1","service":"cricket-crash","timestamp":"2025-07-29T10:25:58.264Z"}
+{"level":"info","message":"Client disconnected. Total connections: 0","service":"cricket-crash","timestamp":"2025-07-29T10:25:58.264Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:25:59.557Z"}
+{"level":"info","message":"Game running with crash point: 1.99","service":"cricket-crash","timestamp":"2025-07-29T10:26:05.678Z"}
+{"level":"info","message":"Game results saved for round 1753784759557","service":"cricket-crash","timestamp":"2025-07-29T10:26:08.148Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:26:08.148Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:26:13.162Z"}
+{"level":"info","message":"Game running with crash point: 2.45","service":"cricket-crash","timestamp":"2025-07-29T10:26:19.273Z"}
+{"level":"info","message":"Game results saved for round 1753784773162","service":"cricket-crash","timestamp":"2025-07-29T10:26:22.491Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:26:22.491Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:26:27.504Z"}
+{"level":"info","message":"Game running with crash point: 1.04","service":"cricket-crash","timestamp":"2025-07-29T10:26:33.623Z"}
+{"level":"info","message":"Game results saved for round 1753784787504","service":"cricket-crash","timestamp":"2025-07-29T10:26:33.812Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:26:33.813Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:26:38.825Z"}
+{"level":"info","message":"Game running with crash point: 4.29","service":"cricket-crash","timestamp":"2025-07-29T10:26:44.958Z"}
+{"level":"info","message":"Game results saved for round 1753784798826","service":"cricket-crash","timestamp":"2025-07-29T10:26:50.015Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:26:50.016Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:26:55.025Z"}
+{"level":"info","message":"Game running with crash point: 1.74","service":"cricket-crash","timestamp":"2025-07-29T10:27:01.130Z"}
+{"level":"info","message":"Game results saved for round 1753784815025","service":"cricket-crash","timestamp":"2025-07-29T10:27:03.094Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:27:03.094Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:27:08.099Z"}
+{"level":"info","message":"Game running with crash point: 1.07","service":"cricket-crash","timestamp":"2025-07-29T10:27:14.220Z"}
+{"level":"info","message":"Game results saved for round 1753784828099","service":"cricket-crash","timestamp":"2025-07-29T10:27:14.538Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:27:14.538Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:27:19.543Z"}
+{"level":"info","message":"Game running with crash point: 3.19","service":"cricket-crash","timestamp":"2025-07-29T10:27:25.659Z"}
+{"level":"info","message":"Game results saved for round 1753784839543","service":"cricket-crash","timestamp":"2025-07-29T10:27:29.706Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:27:29.706Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:27:34.709Z"}
+{"level":"info","message":"Game running with crash point: 4.96","service":"cricket-crash","timestamp":"2025-07-29T10:27:40.820Z"}
+{"level":"info","message":"Game results saved for round 1753784854709","service":"cricket-crash","timestamp":"2025-07-29T10:27:46.386Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:27:46.386Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:27:51.389Z"}
+{"level":"info","message":"Game running with crash point: 1.41","service":"cricket-crash","timestamp":"2025-07-29T10:27:57.514Z"}
+{"level":"info","message":"Game results saved for round 1753784871389","service":"cricket-crash","timestamp":"2025-07-29T10:27:58.837Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:27:58.837Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:28:03.838Z"}
+{"level":"info","message":"Game running with crash point: 1.55","service":"cricket-crash","timestamp":"2025-07-29T10:28:09.958Z"}
+{"level":"info","message":"Game results saved for round 1753784883839","service":"cricket-crash","timestamp":"2025-07-29T10:28:11.540Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:28:11.540Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:28:16.554Z"}
+{"level":"info","message":"Game running with crash point: 1.12","service":"cricket-crash","timestamp":"2025-07-29T10:28:22.669Z"}
+{"level":"info","message":"Game results saved for round 1753784896554","service":"cricket-crash","timestamp":"2025-07-29T10:28:23.112Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:28:23.112Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:28:28.118Z"}
+{"level":"info","message":"Game running with crash point: 5.68","service":"cricket-crash","timestamp":"2025-07-29T10:28:34.247Z"}
+{"level":"info","message":"Game results saved for round 1753784908119","service":"cricket-crash","timestamp":"2025-07-29T10:28:40.242Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:28:40.243Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:28:45.252Z"}
+{"level":"info","message":"Game running with crash point: 1.08","service":"cricket-crash","timestamp":"2025-07-29T10:28:51.358Z"}
+{"level":"info","message":"Game results saved for round 1753784925253","service":"cricket-crash","timestamp":"2025-07-29T10:28:51.674Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:28:51.675Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:28:56.687Z"}
+{"level":"info","message":"Game running with crash point: 2.97","service":"cricket-crash","timestamp":"2025-07-29T10:29:02.813Z"}
+{"level":"info","message":"Game results saved for round 1753784936688","service":"cricket-crash","timestamp":"2025-07-29T10:29:06.659Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:29:06.659Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:29:11.675Z"}
+{"level":"info","message":"Game running with crash point: 1.49","service":"cricket-crash","timestamp":"2025-07-29T10:29:17.765Z"}
+{"level":"info","message":"Game results saved for round 1753784951675","service":"cricket-crash","timestamp":"2025-07-29T10:29:19.221Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:29:19.222Z"}
+{"level":"info","message":"Preparing next round...","service":"cricket-crash","timestamp":"2025-07-29T10:29:24.228Z"}
+{"level":"info","message":"Game running with crash point: 2.57","service":"cricket-crash","timestamp":"2025-07-29T10:29:30.343Z"}
+{"level":"info","message":"Game results saved for round 1753784964229","service":"cricket-crash","timestamp":"2025-07-29T10:29:33.706Z"}
+{"level":"info","message":"Game completed, preparing for next round in 5 seconds","service":"cricket-crash","timestamp":"2025-07-29T10:29:33.706Z"}
+{"level":"info","message":"Successfully created indexes for users","service":"cricket-crash","timestamp":"2025-07-29T10:29:47.542Z"}
+{"level":"info","message":"Successfully created indexes for games","service":"cricket-crash","timestamp":"2025-07-29T10:29:47.729Z"}
+{"level":"info","message":"Successfully created indexes for bets","service":"cricket-crash","timestamp":"2025-07-29T10:29:47.849Z"}
+{"level":"info","message":"Successfully created indexes for transactions","service":"cricket-crash","timestamp":"2025-07-29T10:29:47.897Z"}
+{"level":"info","message":"MongoDB indexes setup completed","service":"cricket-crash","timestamp":"2025-07-29T10:29:47.897Z"}
+{"level":"info","message":"Initializing seed chain...","service":"cricket-crash","timestamp":"2025-07-29T10:29:47.899Z"}
+{"level":"info","message":"New seed chain initialized","service":"cricket-crash","timestamp":"2025-07-29T10:29:47.971Z"}
+{"level":"info","message":"Cricket Crash Game server running on http://localhost:3000","service":"cricket-crash","timestamp":"2025-07-29T10:29:48.002Z"}
+{"level":"info","message":"Worker 48096 is ready to handle connections","service":"cricket-crash","timestamp":"2025-07-29T10:29:48.002Z"}

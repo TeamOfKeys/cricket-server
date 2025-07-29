@@ -16,7 +16,7 @@ class PlayerService {
     // ADD THIS METHOD for handling deposits
     async handleDeposit(userId, amount) {
         try {
-            console.log(`💰 Processing deposit for user ${userId}, amount: ${amount}`);
+            console.log(` Processing deposit for user ${userId}, amount: ${amount}`);
             
             // Validate parameters
             if (!userId || !amount || amount <= 0) {
@@ -29,7 +29,7 @@ class PlayerService {
                 return { success: false, message: 'User not found' };
             }
 
-            console.log(`👤 User found: ${user.username}, current balance: ${user.balance}`);
+            console.log(` User found: ${user.username}, current balance: ${user.balance}`);
 
             // Calculate new balance
             const currentBalance = user.balance || 0;
@@ -55,7 +55,7 @@ class PlayerService {
                 createdAt: new Date()
             });
 
-            console.log(`✅ Deposit successful: ${user.username} balance updated from ${currentBalance} to ${newBalance}`);
+            console.log(`Deposit successful: ${user.username} balance updated from ${currentBalance} to ${newBalance}`);
 
             // Invalidate user cache if available
             if (cacheService.invalidateUserCache) {
@@ -74,7 +74,7 @@ class PlayerService {
             };
 
         } catch (error) {
-            console.error('❌ Deposit error:', error);
+            console.error(' Deposit error:', error);
             return { success: false, message: 'Server error processing deposit' };
         }
     }
@@ -90,7 +90,7 @@ class PlayerService {
             }
 
             if (this.gameState.players.has(userId.toString())) {
-                console.warn(`⚠️ Duplicate bet attempt for user ${userId}`);
+                console.warn(`Duplicate bet attempt for user ${userId}`);
                 return { success: false, message: 'You already have a bet in this round' };
             }
 
@@ -105,7 +105,7 @@ class PlayerService {
         try {
             if (!this._validateCashoutParams(userId)) {
                 return { success: false, message: 'Invalid cashout parameters' };
-            }
+             }
 
             return await this._processCashout(userId);
         } catch (err) {
@@ -118,9 +118,7 @@ class PlayerService {
         const user = await User.findById(userId);
         if (!user) return { success: false, message: 'User not found' };
 
-        // console.log('🔍 User found:', user.username);
-        //     console.log('🔍 Current balance:', user.balance);
-        //     console.log('🔍 Bet amount:', amount);
+
         if (user.balance < amount) return { success: false, message: 'Insufficient balance' };
 
         const updatedUser = await User.findOneAndUpdate(
